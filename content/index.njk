@@ -1,0 +1,60 @@
+---
+layout: layouts/base.njk
+title: Home
+---
+
+<section class="container-page py-12">
+  <header class="mb-8">
+    <h2 class="text-2xl font-semibold tracking-tight">Welcome</h2>
+    <p class="text-sm text-muted-foreground mt-1">
+      A clean Eleventy + Tailwind v4 base. Links are styled, prose is pretty, and the grid is ready.
+    </p>
+  </header>
+
+  <article class="prose prose-neutral container-readable mb-12">
+    <p>
+      This paragraph uses the <code>prose</code> theme. Links look <a href="#" title="Example link">tasteful</a>,
+      and blockquotes have a muted hunter-green accent:
+    </p>
+
+    <p>
+      <img src="/assets/images/y-ddraig-goch.jpeg" width="810" alt="Y Ddaig Goch by Catrin Ellis - https://unsplash.com/photos/red-and-white-flag-with-dragon-Xvw16l-b2uo">
+    </p>
+
+    <blockquote>
+      <p>
+        “Good design is as little design as possible.” — Dieter Rams
+      </p>
+    </blockquote>
+  </article>
+
+  <!-- Centered, responsive grid of cards -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    <article class="card">
+      <h3 class="text-lg font-semibold mb-1">
+        <a href="/writing/">Writing</a>
+      </h3>
+      <p class="text-sm text-muted-foreground">
+        Long-form posts, essays, and notes.
+      </p>
+    </article>
+
+    <article class="card">
+      <h3 class="text-lg font-semibold mb-1">
+        <a href="/notes/">Linked Notes</a>
+      </h3>
+      <p class="text-sm text-muted-foreground">
+        Short link-blog entries with commentary.
+      </p>
+    </article>
+
+    <article class="card">
+      <h3 class="text-lg font-semibold mb-1">
+        <a href="/about/">About</a>
+      </h3>
+      <p class="text-sm text-muted-foreground">
+        Who I am, how this site is built, and what’s next.
+      </p>
+    </article>
+  </div>
+</section>

@@ -1,0 +1,15 @@
+# ------------------------------
+# STATIC MODE (default)
+# Keep 404s as real 404s
+# (Uncomment the SPA rule below ONLY if you’re building an SPA.)
+# ------------------------------
+
+# Example: custom redirects (add your own):
+# /old-page   /new-page            301
+
+# ------------------------------
+# SPA MODE (optional)
+# Use a single-page app fallback.
+# WARNING: This will effectively bypass 404.html for unknown routes.
+# Uncomment the next line to enable SPA fallback:
+# /*         /index.html          200

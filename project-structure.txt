@@ -1,0 +1,31 @@
+11ty-project-base/
+├─ _config/
+│  ├─ filters.js
+│  ├─ shortcodes.js
+│  └─ transforms.js
+├─ _data/
+│  └─ env.js
+├─ _helpers/
+│  └─ build-js.js
+├─ _includes/
+│  └─ layouts/
+│  |   └─ base.njk
+│  └─ partials/
+├─ content/
+│  ├─ index.njk
+│  └─ styles/
+│     └─ main.css
+├─ _site/                # output (gitignored)
+├─ scripts/
+│  └─ main.js
+├─ styles/
+│  └─ Tailwind.css       # (optional) global CSS placeholder
+├─ public/
+│  └─ assets/
+│     └─ images/
+│        └─ example.jpg
+├─ .gitignore
+├─ .nvmrc
+├─ eleventy.config.js
+└─ package.json
+# End of structure

@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build (Tailwind → JS → Eleventy)
+        run: npm run build:all
+
+      - name: Verify build artefacts exist
+        run: |
+          test -d _site
+          test -f _site/index.html
+
+      - name: Upload site artefact (optional)
+        uses: actions/upload-artifact@v4
+        with:
+          name: site
+          path: _site
+          if-no-files-found: error

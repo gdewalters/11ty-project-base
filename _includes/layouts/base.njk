@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ title or "11ty Project Base" }}</title>
+  {% if noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
+  <script>
+    /* Set data-theme early based on saved pref or OS, to avoid flash */
+    (function () {
+      try {
+        var stored = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        var theme = stored || (prefersDark ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    }());
+  </script>
+  <link rel="stylesheet" href="/assets/main.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header border-b">
+    <div class="container-page flex items-center gap-4 py-4">
+      <h1 class="text-xl font-semibold">
+        <a class="unstyled hover:underline" href="/">{{ site.name }}</a>
+      </h1>
+
+      <!-- Optional nav (delete if you don’t want it yet) -->
+      {# 
+      <nav class="ml-auto">
+        <ul class="flex items-center gap-5 text-sm">
+          <li><a class="unstyled hover:underline" href="/writing/">Writing</a></li>
+          <li><a class="unstyled hover:underline" href="/notes/">Notes</a></li>
+          <li><a class="unstyled hover:underline" href="/about/">About</a></li>
+        </ul>
+      </nav>
+      #}
+
+      <!-- Keep the toggle pinned right even if nav is absent -->
+      <div class="ml-auto">
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false">Toggle theme</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="site-main">
+    {{ content | safe }}
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer border-t">
+    <div class="container-page py-8 text-sm text-muted-foreground">
+      <div class="flex items-center justify-between gap-4">
+        <small>&copy; {{ site.year }} {{ site.name }}</small>
+        {# Optional: <a class="unstyled hover:underline" href="/rss.xml">RSS</a> #}
+      </div>
+    </div>
+  </footer>
+  <script src="/assets/js/bundle.js" defer></script>
+</body>
+</html>

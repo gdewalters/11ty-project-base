@@ -1,0 +1,32 @@
+---
+permalink: 404.html
+eleventyExcludeFromCollections: true
+layout: layouts/base.njk
+title: "Page not found"
+noindex: true
+---
+
+<h2>Oops—page not found.</h2>
+
+<p>
+  We couldn’t find the page you asked for:
+  <code id="missing-path" aria-live="polite">/…</code>
+</p>
+
+<p>Try one of these instead:</p>
+<ul>
+  <li><a href="/">Home</a></li>
+  {# Add more helpful links when you add sections/collections #}
+</ul>
+
+<p>If you followed a link from here, that’s on us—please <a href="mailto:hello@example.com">let me know</a>.</p>
+
+<script>
+  // Show the actual missing path for nicer UX (and useful bug reports)
+  (function () {
+    var el = document.getElementById('missing-path');
+    if (el && typeof window !== "undefined") {
+      el.textContent = window.location.pathname + window.location.search + window.location.hash;
+    }
+  }());
+</script>

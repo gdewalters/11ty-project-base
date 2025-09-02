@@ -1,0 +1,30 @@
+[build]
+  command = "npm run build:all"
+  publish = "_site"
+
+[build.environment]
+  NODE_VERSION = "20"
+  # Optional: only if you want to force production here instead of via npm script
+  # ELEVENTY_ENV = "prod"
+
+# Long-cache immutable assets (CSS/JS/images you fingerprint or are comfortable caching)
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Sensible security-ish headers (kept mild so we don’t break inline theme script)
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+
+# ---- SPA fallback (OPTIONAL) ----
+# If you ever convert to an SPA and want unknown routes to hit index.html,
+# uncomment this and REMOVE the static 404 behavior (don’t also keep a wildcard in _redirects).
+# [[redirects]]
+#   from = "/*"
+#   to = "/index.html"
+#   status = 200

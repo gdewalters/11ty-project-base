@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../scripts/main.js"],
+  "sourcesContent": ["console.log(\"Hello from scripts/main.js\");\n\n  (function () {\n    var root = document.documentElement;\n    var btn = document.getElementById('theme-toggle');\n    if (!btn) return;\n\n    function setTheme(next) {\n      root.setAttribute('data-theme', next);\n      try { localStorage.setItem('theme', next); } catch (e) {}\n      btn.setAttribute('aria-pressed', String(next === 'dark'));\n    }\n\n    btn.addEventListener('click', function () {\n      var current = root.getAttribute('data-theme') || 'light';\n      setTheme(current === 'dark' ? 'light' : 'dark');\n    });\n\n    // sync button state on load\n    setTheme(root.getAttribute('data-theme') || 'light');\n  }());\n\n"],
+  "mappings": ";;AAAA,UAAQ,IAAI,4BAA4B;AAEtC,GAAC,WAAY;AACX,QAAI,OAAO,SAAS;AACpB,QAAI,MAAM,SAAS,eAAe,cAAc;AAChD,QAAI,CAAC,IAAK;AAEV,aAAS,SAAS,MAAM;AACtB,WAAK,aAAa,cAAc,IAAI;AACpC,UAAI;AAAE,qBAAa,QAAQ,SAAS,IAAI;AAAA,MAAG,SAAS,GAAG;AAAA,MAAC;AACxD,UAAI,aAAa,gBAAgB,OAAO,SAAS,MAAM,CAAC;AAAA,IAC1D;AAEA,QAAI,iBAAiB,SAAS,WAAY;AACxC,UAAI,UAAU,KAAK,aAAa,YAAY,KAAK;AACjD,eAAS,YAAY,SAAS,UAAU,MAAM;AAAA,IAChD,CAAC;AAGD,aAAS,KAAK,aAAa,YAAY,KAAK,OAAO;AAAA,EACrD,GAAE;",
+  "names": []
+}
